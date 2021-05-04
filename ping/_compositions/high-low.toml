@@ -4,18 +4,18 @@
 [global]
   plan = "libp2p/ping"
   case = "ping"
-  total_instances = 10
+  total_instances = 50
   builder = "docker:go"
   runner = "local:docker"
 
 [[groups]]
   id = "low-latency"
-  instances = { count = 5 }
+  instances = { count = 25 }
   [groups.run.test_params]
     max_latency_ms = "500"
 
 [[groups]]
   id = "high-latency"
-  instances = { count = 5 }
+  instances = { count = 25 }
   [groups.run.test_params]
     max_latency_ms = "5000"
